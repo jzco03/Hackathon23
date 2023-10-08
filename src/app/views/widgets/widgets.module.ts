@@ -19,6 +19,8 @@ import { WidgetsRoutingModule } from './widgets-routing.module';
 import { WidgetsComponent } from './widgets/widgets.component';
 import { WidgetsBrandComponent } from './widgets-brand/widgets-brand.component';
 import { ChartSample, WidgetsDropdownComponent } from './widgets-dropdown/widgets-dropdown.component';
+import { WidgetsBlueComponent } from './widgets-blue/widgets-blue.component';
+import { WidgetsArrowComponent } from './widgets-arrow/widgets-arrow.component';
 import { WidgetsEComponent } from './widgets-e/widgets-e.component';
 
 @NgModule({
@@ -26,6 +28,8 @@ import { WidgetsEComponent } from './widgets-e/widgets-e.component';
     WidgetsComponent,
     WidgetsBrandComponent,
     WidgetsDropdownComponent,
+    WidgetsBlueComponent,
+    WidgetsArrowComponent,
     ChartSample,
     WidgetsEComponent
   ],
@@ -45,7 +49,9 @@ import { WidgetsEComponent } from './widgets-e/widgets-e.component';
   ],
   exports: [
     WidgetsBrandComponent,
-    WidgetsDropdownComponent
+    WidgetsDropdownComponent,
+    WidgetsBlueComponent,
+    WidgetsArrowComponent,
   ]
 })
 export class WidgetsModule {

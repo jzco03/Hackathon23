@@ -1,0 +1,60 @@
+<c-row>
+  <c-col sm="6" xl="9">
+    <c-widget-stat-a 
+      style="background-color: #9CB5E2;"
+      title=""
+    >
+      <ng-template cTemplateId="widgetValueTemplate" ngPreserveWhitespaces>
+        <p class="mb-12" style="margin-left:-18px;background-color: white;color: #7FA5F9;width:307px;margin-top:-1px;height:60px;text-align: center;vertical-align: middle;">
+          {{temperature}}
+        </p>
+        <p class="mb-12" style="margin:-18px;background-color: #9CB5E2 ;color: black;width:307px;height: 30px;"></p>
+
+        <p class="mb-12" style="margin-left:-18px;background-color: white;color: black;width:307px;margin-top:-1px;text-align: center;vertical-align: middle;font-size: 14px;">PALETTE EN STOCK</p>
+        <div class="mb-12" style="margin:-18px;background-color: #9CB5E2 ;color: black;width:307px;height: 120px;vertical-align: middle;padding-left: 20px;padding-top:20px">
+          <span style="vertical-align: middle;">
+            <img src="./assets/img/blackPalette.png" alt="Palette" width="64px" height="64px">
+          </span>
+          <span style="vertical-align: middle;padding-left: 120px;">
+            {{_nbPaletteStock}}
+          </span>          
+        </div>
+
+        <p class="mb-12" style="margin-left:-18px;background-color: white;color: black;width:307px;margin-top:-1px;text-align: center;vertical-align: middle;font-size: 14px;" >NB AVERAGE IN STOCK</p>
+        <div class="mb-12" style="margin:-18px;background-color: #9CB5E2 ;color: black;width:307px;height: 120px;vertical-align: middle;padding-left: 15px;padding-top:20px">
+          <span style="vertical-align: middle;">
+            <img src="./assets/img/calendar-icon-png-black-9.jpg" alt="Calendrier" width="64px" height="64px">
+          </span>
+          <span style="vertical-align: middle;padding-left: 100px;">
+            {{_nbPalette}} jours
+          </span>          
+        </div>
+
+
+        <p class="mb-12" style="margin-left:-18px;background-color: white;color: black;width:307px;margin-top:-1px;text-align: center;vertical-align: middle;font-size: 14px;">CO2 GENERE</p>
+        <div class="mb-12" style="margin:-18px;background-color: #9CB5E2 ;color: black;width:307px;height: 120px;vertical-align: middle;padding-left: 5px;padding-top:25px">
+          <span style="vertical-align: middle;">
+            <img src="./assets/img/co2-icon-12.jpg" alt="co2" width="48px" height="48px">
+          </span>
+          <span style="vertical-align: middle;padding-left: 120px;">
+            {{co2Genere}} PPM
+          </span>
+        </div>
+
+
+        <p class="mb-12" style="margin-left:-18px;background-color: white;color: black;width:307px;margin-top:-1px;text-align: center;vertical-align: middle;font-size: 14px;">ENERGY USED</p>
+        <div class="mb-12" style="margin:-18px;background-color: #9CB5E2;color: black;width:307px;height: 110px;vertical-align: middle;padding-left: 15px;padding-top:35px">
+          <span style="vertical-align: middle;">
+            <img src="./assets/img/R.png" alt="Elec" width="48px" height="48px">
+          </span>
+          <span style="vertical-align: middle;padding-left: 100px;">
+            {{energyUsed}} KWH
+          </span>          
+        </div>
+
+
+      </ng-template>
+    </c-widget-stat-a>
+  </c-col>
+</c-row>
+

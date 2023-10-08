@@ -12,6 +12,10 @@ import { AppRoutingModule } from './app-routing.module';
 // Import app component
 import { AppComponent } from './app.component';
 
+import { HttpClientModule } from '@angular/common/http';
+
+
+
 // Import containers
 import { DefaultFooterComponent, DefaultHeaderComponent, DefaultLayoutComponent } from './containers';
 
@@ -72,7 +76,8 @@ const APP_CONTAINERS = [
     BadgeModule,
     ListGroupModule,
     CardModule,
-    NgScrollbarModule
+    NgScrollbarModule,
+    HttpClientModule
   ],
   providers: [
     {

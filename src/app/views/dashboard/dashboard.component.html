@@ -1,4 +1,33 @@
-<app-widgets-dropdown></app-widgets-dropdown>
+<!--<app-widgets-dropdown></app-widgets-dropdown>-->
+<c-row>
+
+  <c-col class="mb-3" style="position: relative;top :250px">
+    <app-widgets-arrow sens="IN"  nbPalette="33" co2Genere="15"></app-widgets-arrow>
+  </c-col>
+  
+  <c-col class="mb-3">
+    <app-widgets-blue temperature="FROZEN" nbPaletteStock="333" nbPalette="22" co2Genere="{{items.co2}}" energyUsed="{{items.kwh}}"></app-widgets-blue>
+  </c-col>
+  
+  <c-col class="mb-3" style="position: relative;top :250px">
+    <app-widgets-arrow sens="OUT" nbPalette="33" co2Genere="15"></app-widgets-arrow>
+  </c-col>
+  
+<!-- 
+    <c-col>
+
+      <app-widgets-blue temperature="FRESH" nbPaletteStock="44" nbPalette="11" co2Genere="11" energyUsed="333"></app-widgets-blue>
+
+    </c-col>
+
+    <c-col>
+
+      <app-widgets-blue temperature="DRY"  nbPaletteStock="Dry" nbPalette="66" co2Genere="67" energyUsed="456"></app-widgets-blue>
+
+    </c-col> -->
+</c-row>
+
+<!-- 
 <c-card class="mb-4">
   <c-card-body>
     <c-row>
@@ -445,3 +474,4 @@
     </c-card>
   </c-col>
 </c-row>
+ -->

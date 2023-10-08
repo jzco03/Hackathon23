@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 
 import { DashboardChartsData, IChartProps } from './dashboard-charts-data';
+import { HttpClient } from '@angular/common/http';
+
 
 interface IUser {
   name: string;
@@ -17,14 +19,52 @@ interface IUser {
   color: string;
 }
 
+export interface mouvements {
+  kwh: number;
+  co2: number;
+}
+
+export class Mouvements {
+  
+  kwh: number = 0;
+  co2: number = 0;
+
+  constructor(
+    _kwh: number
+  ) {
+    this.kwh = Number(_kwh.toFixed(3));
+    this.co2 = Number((_kwh*0.6).toFixed(3));
+    console.log(this);
+  }
+}
+
+
 @Component({
   templateUrl: 'dashboard.component.html',
   styleUrls: ['dashboard.component.scss']
 })
-export class DashboardComponent implements OnInit {
-  constructor(private chartsData: DashboardChartsData) {
-  }
 
+export class DashboardComponent implements OnInit {
+  
+  items: Mouvements = new Mouvements(0);
+  
+  private _url = "http://54.228.18.75:8080/mouvementsPower?date_debut=2022-10-01T00:00:00&date_fin=2022-10-11T00:00:00&id_client=NESTLE414";
+  private _url2 = "http://54.228.18.75:8080/entreesortie?date_debut=2022-10-01T00:00:00&date_fin=2022-10-11T00:00:00&id_client=NESTLE414";
+  
+
+  constructor(private chartsData: DashboardChartsData, private http:HttpClient) {
+      // http.get<Mouvements>(this._url)
+      // .subscribe(res => {
+      //   this.items.kwh = res.kwh; 
+      //   this.items.co2 = res.kwh*0.6; 
+      // });
+      http.get<Mouvements>(this._url)
+      .subscribe(res => 
+        {
+          this.items = new Mouvements(res.kwh);
+        });
+  }
+  
   public users: IUser[] = [
     {
       name: 'Yiorgos Avraamu',
@@ -113,6 +153,9 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(): void {
     this.initCharts();
+
+    console.log(this.items);
+
   }
 
   initCharts(): void {

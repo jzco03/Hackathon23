@@ -49,6 +49,8 @@ import { SpinnersComponent } from './spinners/spinners.component';
 import { TablesComponent } from './tables/tables.component';
 import { TooltipsComponent } from './tooltips/tooltips.component';
 import { TabsComponent } from './tabs/tabs.component';
+import { DatePickerComponent } from './datepicker/date.component';
+
 
 // Components Routing
 import { BaseRoutingModule } from './base-routing.module';
@@ -100,6 +102,7 @@ import { BaseRoutingModule } from './base-routing.module';
     TooltipsComponent,
     TabsComponent,
     PlaceholdersComponent,
+    DatePickerComponent
   ],
 })
 export class BaseModule {}
